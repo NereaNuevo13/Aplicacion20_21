@@ -238,6 +238,7 @@ h1{
     background-color: black;
     margin: 0 auto;
     color: white;
+    width: 50%;
 }
 
 .inicioSesion{
@@ -303,4 +304,12 @@ th{
 
 .buttons-header-inicio{
     width: 90%;
+}
+
+#CodUsuario, #DescUsuario, #Password, #PasswordConfirmacion{
+    margin-top: 20px;
+}
+
+.button{
+    margin: 0px;
 }

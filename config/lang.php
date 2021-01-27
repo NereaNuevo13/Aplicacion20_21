@@ -23,6 +23,7 @@ $aLang = [
         'numConn' => 'Numero de Conexiones',
         'lastConn' => 'Ultima Conexion',
         'deleteAcc' => 'Borrar Cuenta',
+        'confirmPassword' => 'Confirmar Contraseña',
         
         'accept' => 'Aceptar',
         'cancel' => 'Cancelar'
@@ -47,6 +48,7 @@ $aLang = [
         'numConn' => 'Number of connections',
         'lastConn' => 'Last Connection',
         'deleteAcc' => 'Delete Account',
+        'confirmPassword' => 'Confirm Password',
         
         'accept' => 'Accept',
         'cancel' => 'Cancel'

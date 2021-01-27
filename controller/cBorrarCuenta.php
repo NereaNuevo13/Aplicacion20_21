@@ -1,13 +1,15 @@
 <?php
-$usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
-$CodUser = $usuarioActual->getCodUsuario();
-$DescUser = $usuarioActual->getDescUsuario();
-$Profile = $usuarioActual->getPerfil();
-$ConexNumber = $usuarioActual->getNumConexiones();
-$LastDateConex = date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion());
+
 if (isset($_REQUEST['Cancelar'])) {
 
     $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del login
+    header('Location: index.php');
+    exit;
+}
+
+if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['miCuenta']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+    
     header('Location: index.php');
     exit;
 }

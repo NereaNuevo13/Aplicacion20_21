@@ -1,42 +1,39 @@
 <header>
-    <h1 id="titulo"><?php echo $aLang[$_COOKIE['idioma']]['deleteAcc']; ?></h1>
+    <h1 class="inicioSesion">Borrar Cuenta</h1>
+    <div class="buttons-header-inicio">
+        <!--
+        <a href="detalle.php"><button class="button-inicio" name="Detalle"> <?php echo $aLang[$_COOKIE['idioma']]['details']; ?></button></a>
+        <a href="editarPerfil.php"><button class="button-inicio" name="EditarPefil"> <?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button></a>
+        -->
+        <?php echo ($usuarioActual->getImagenPerfil() != null) ? '<img id="fotoPerfil" src = "data:image/png;base64,' . base64_encode($usuarioActual->getImagenPerfil()) . '" alt="Foto de perfil"/>' : "<img id='fotoPerfil' src='webroot/media/imagen_perfil2.png' alt='imagen_perfil'/>"; ?>
+        <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
+            <button class="logout" type="submit" name='editarPerfil'><?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button>
+        </form>
+    </div>
+
 </header>
-<main>
-    <form class="enter" name="edit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<main class="main-container-inicio" class="flex-container-align-item-center">
+    <article class="articuloEditar">
+        <label for="CodUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['user']; ?></label>
+        <input class="required" disabled type="text" id="CodUsuario" name="CodUsuario" value="<?php echo $usuarioActual->getCodUsuario() ?>">
+        <br>
+        <label for="DescUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['description']; ?></label>
+        <input class="required" disabled type="text" id="DescUsuario" name="DescUsuario" value="<?php echo $usuarioActual->getDescUsuario() ?>">
+        <br>
+        <label for="TipoUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['typeUser']; ?></label>
+        <input class="required" disabled type="text" id="TipoUsuario" name="TipoUsuario" value="<?php echo $usuarioActual->getPerfil() ?>">
+        <br>
+        <label for="NumConexiones" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['numConn']; ?></label>
+        <input class="required" disabled type="text" id="NumConexiones" name="NumConexiones" value="<?php echo $usuarioActual->getNumConexiones() ?>">
+        <br>
+        <label for="FechaUltimaConexion" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['lastConn']; ?></label>
+        <input class="required" disabled type="text" id="FechaUltimaConexion" name="FechaUltimaConexion" value="<?php echo date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion()) ?>">
 
-        <!-----------------CÓDIGO----------------->
-        <div class="required">
-            <label for="CodUsuario"><?php echo $aLang[$_COOKIE['idioma']]['user']; ?></label>
-            <input type="text" id="CodUsuario" name="CodUsuario" class="lectura" value="<?php echo $CodUser ?>" readonly>
-        </div>
-
-        <!-----------------DESCRIPCIÓN----------------->
-        <div class="required">
-            <label for="DescUsuario"><?php echo $aLang[$_COOKIE['idioma']]['description']; ?></label>
-            <input type="text" id="DescUsuario" name="DescUsuario"  value="<?php echo $DescUser ?>" readonly/>
-        </div>
-        <!-----------------PERFIL----------------->
-        <div class="required">
-            <label for="Perfil"><?php echo $aLang[$_COOKIE['idioma']]['profile']; ?></label>
-            <input type="text" id="Perfil" name="Perfil"  class="lectura"value="<?php echo $Profile ?>" readonly/>
-        </div>
-
-        <!-----------------NÚMERO DE CONEXIONES----------------->
-        <div class="required">
-            <label for="Conexiones"><?php echo $aLang[$_COOKIE['idioma']]['NumConex']; ?></label>
-            <input type="number" id="Conexiones" name="Conexiones" value="<?php echo $ConexNumber ?>" readonly/>
-        </div>
-
-        <!-----------------ÛLTIMA FECHA DE CONEXION----------------->
-        <div class="required">
-            <label for="Ultima"><?php echo $aLang[$_COOKIE['idioma']]['DateLastConex']; ?></label>
-            <input type="datetime" id="Ultima" name="Ultima" value="<?php echo $LastDateConex ?>" readonly/>
-        </div>
-
-        <div>
-            <button class="button" type="submit" name="Aceptar"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>    
-            <button class="button" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button> 
-        </div>
-
+    </article>
+    <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <button class="logout" id="aceptar" type="submit" name='Aceptar'><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+        <button class="logout" id="cancelar" type="submit" name='Cancelar'><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
     </form>
 </main>
+</body>

@@ -22,6 +22,7 @@ $aLang = [
         'typeUser' => 'Tipo de Usuario',
         'numConn' => 'Numero de Conexiones',
         'lastConn' => 'Ultima Conexion',
+        'deleteAcc' => 'Borrar Cuenta',
         
         'accept' => 'Aceptar',
         'cancel' => 'Cancelar'
@@ -35,7 +36,7 @@ $aLang = [
         'signup' => 'Sign Up',
 
         'title' => 'Program',
-        'logoff' => 'Logoff',
+        'logoff' => 'Log Out',
         'welcome' => 'Welcome '.(isset($usuarioActual) ? $usuarioActual->getDescUsuario() : null),
         'numConnections' => 'You have connected '.(isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null).' times',
         'numConnectionsWelcome' => 'This is the first time you connect',  
@@ -45,6 +46,7 @@ $aLang = [
         'typeUser' => 'User Type',
         'numConn' => 'Number of connections',
         'lastConn' => 'Last Connection',
+        'deleteAcc' => 'Delete Account',
         
         'accept' => 'Accept',
         'cancel' => 'Cancel'

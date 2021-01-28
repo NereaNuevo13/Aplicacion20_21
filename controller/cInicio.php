@@ -29,6 +29,13 @@ if (isset($_REQUEST['borrarCuenta'])) { // si se ha pulsado el boton de registra
     exit;
 }
 
+if (isset($_REQUEST['REST'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['rest']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+    
+    header('Location: index.php');
+    exit;
+}
+
 $oUsuarioControlador = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
 
 $numConexiones = $oUsuarioControlador->getNumConexiones(); // variable que tiene el numero de conexiones sacado de la base de datos

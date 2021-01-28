@@ -10,6 +10,7 @@
             <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
             <button class="logout" type="submit" name='editarPerfil'><?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button>
             <button class="logout" type="submit" name='borrarCuenta'><?php echo $aLang[$_COOKIE['idioma']]['deleteAcc']; ?></button>
+            <button class="logout" type="submit" name='REST'><?php echo $aLang[$_COOKIE['idioma']]['rest']; ?></button>
         </form>
     </div>
 

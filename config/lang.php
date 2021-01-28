@@ -24,6 +24,7 @@ $aLang = [
         'lastConn' => 'Ultima Conexion',
         'deleteAcc' => 'Borrar Cuenta',
         'confirmPassword' => 'Confirmar Contraseña',
+        'rest' => 'REST',
         
         'accept' => 'Aceptar',
         'cancel' => 'Cancelar'
@@ -49,6 +50,7 @@ $aLang = [
         'lastConn' => 'Last Connection',
         'deleteAcc' => 'Delete Account',
         'confirmPassword' => 'Confirm Password',
+        'rest' => 'REST',
         
         'accept' => 'Accept',
         'cancel' => 'Cancel'

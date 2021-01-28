@@ -1,11 +1,12 @@
 <?php
+
 /**
  *   @author: Javier Nieto Lorenzo
  *   @since: 02/12/2020
  *   cInicio
  */
-if(!isset($_COOKIE['idioma'])){
-    setcookie('idioma','es',time()+2592000); // crea la cookie 'idioma' con el valor 'es' para 30 dias
+if (!isset($_COOKIE['idioma'])) {
+    setcookie('idioma', 'es', time() + 2592000); // crea la cookie 'idioma' con el valor 'es' para 30 dias
     header('Location: index.php');
     exit;
 }
@@ -16,11 +17,18 @@ if (isset($_REQUEST['idiomaElegido'])) { // si se ha pulsado el botton de cerrar
     exit;
 }
 
+if (isset($_REQUEST['Registrarse'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['registro']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+
+    header('Location: index.php');
+    exit;
+}
+
 define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
 
 $entradaOK = true;
 
-$aErrores = [ //declaro e inicializo el array de errores
+$aErrores = [//declaro e inicializo el array de errores
     'CodUsuario' => null,
     'Password' => null
 ];
@@ -28,8 +36,8 @@ $aErrores = [ //declaro e inicializo el array de errores
 
 if (isset($_REQUEST["IniciarSesion"])) { // comprueba que el usuario le ha dado a al boton de IniciarSesion y valida la entrada de todos los campos
     $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO); // comprueba que la entrada del codigo de usuario es correcta
-    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);// comprueba que la entrada del password es correcta
-    
+    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO); // comprueba que la entrada del password es correcta
+
     $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
 
     foreach ($aErrores as $campo => $error) { //Recorre el array en busca de mensajes de error

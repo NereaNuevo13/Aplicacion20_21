@@ -238,6 +238,7 @@ h1{
     background-color: black;
     margin: 0 auto;
     color: white;
+    width: 50%;
 }
 
 .inicioSesion{
@@ -279,8 +280,18 @@ th{
     background-color: #EA5656;
 }
 
-#cancelar{
+#cancelar, #inicio{
     background-color: #72BADA;
+}
+
+#reg{
+    background-color: #99E780;
+}
+
+#inicio, #reg{
+    margin-top: 10px;
+    border: 2px solid black;
+    padding: 10px;
 }
 
 .articuloEditar{
@@ -289,4 +300,16 @@ th{
     margin: 0 auto;
     width: 30%;
     padding: 25px;
+}
+
+.buttons-header-inicio{
+    width: 90%;
+}
+
+#CodUsuario, #DescUsuario, #Password, #PasswordConfirmacion{
+    margin-top: 20px;
+}
+
+.button{
+    margin: 0px;
 }

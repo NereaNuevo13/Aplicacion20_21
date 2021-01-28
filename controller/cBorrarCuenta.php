@@ -1,0 +1,29 @@
+<?php
+
+if (isset($_REQUEST['Cancelar'])) {
+
+    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del login
+    header('Location: index.php');
+    exit;
+}
+
+if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['miCuenta']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+    
+    header('Location: index.php');
+    exit;
+}
+
+
+if (isset($_REQUEST["Aceptar"])) { // comprueba que el usuario le ha dado a al boton de IniciarSesion y valida la entrada de todos los campos
+    UsuarioPDO::borrarUsuario($CodUser);
+    session_destroy();
+    $_SESSION['paginaEnCurso'] = $controladores['login']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+
+    header('Location: index.php'); // redirige al index.php
+    exit;
+}
+
+$vista = $vistas['deleteAccount']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
+require_once $vistas['layout'];
+?>

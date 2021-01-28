@@ -22,10 +22,8 @@
         </div>
 
         <div>
-            <button class="button" type="submit" name="IniciarSesion"><?php echo $aLang[$_COOKIE['idioma']]['login']; ?></button>
-            <!--
-            <a class="registrarse" href="registro.php"><?php echo $aLang[$_COOKIE['idioma']]['signup']; ?></a>
-            -->
+            <button class="button" id="inicio" type="submit" name="IniciarSesion"><?php echo $aLang[$_COOKIE['idioma']]['login']; ?></button>
+            <button class="button" id="reg" type="submit" name="Registrarse"><?php echo $aLang[$_COOKIE['idioma']]['signup']; ?></button>
         </div>
 
     </form>

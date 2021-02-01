@@ -24,4 +24,3 @@ $vistas = [
     "deleteAccount" => "view/vBorrarCuenta.php",
     "rest" =>"view/vREST.php"
 ];
-?>

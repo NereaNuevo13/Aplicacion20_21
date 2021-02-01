@@ -51,4 +51,3 @@ if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y h
 
 $vista = $vistas['miCuenta']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
 require_once $vistas['layout']; //se incluye la vista que contiene la $vistaEnCurso
-?> 

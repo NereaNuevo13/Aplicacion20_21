@@ -7,8 +7,8 @@
             <button <?php echo ($_COOKIE['idioma'] == "es") ? "style='color: black;'" : null; ?> class="idioma " type="submit" name="idiomaElegido" value="es"> Castellano</button>
             <button <?php echo ($_COOKIE['idioma'] == "en") ? "style='color: black;'" : null; ?> class="idioma" type="submit" name="idiomaElegido" value="en"> English</button>
         </form>
+        
         <form name="login" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
             <div>
                 <label for="CodUsuario"><?php echo $aLang[$_COOKIE['idioma']]['user']; ?></label>
                 <input class="required" type="text" id="CodUsuario" name="CodUsuario" placeholder="<?php echo $aLang[$_COOKIE['idioma']]['user']; ?>" value="<?php

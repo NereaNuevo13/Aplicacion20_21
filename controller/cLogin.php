@@ -1,7 +1,6 @@
 <?php
-
 /**
- *   @author: Javier Nieto Lorenzo
+ *   @author: Nerea Nuevo Pascual
  *   @since: 02/12/2020
  *   cInicio
  */
@@ -22,57 +21,55 @@ if (isset($_REQUEST['Registrarse'])) { // si se ha pulsado el boton de registrar
 
     header('Location: index.php');
     exit;
-} else {
+}
 
-    define("OBLIGATORIO", 1);
+define("OBLIGATORIO", 1);
 
-    $entradaOK = true;
+$entradaOK = true;
 
 //Array de errores
-    $aErrores = [
-        'CodUsuario' => null,
-        'Password' => null
-    ];
+$aErrores = [
+    'CodUsuario' => null,
+    'Password' => null
+];
 
 //Comprueba que el usuario le ha dado al boton de IniciarSesion y valida la entrada de todos los campos
-    if (isset($_REQUEST["IniciarSesion"])) {
-        $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);
+if (isset($_REQUEST["IniciarSesion"])) {
+    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);
+    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
 
-        $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
+    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
 
-        $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
+    if (!isset($oUsuario)) {
+        $aErrores['CodUsuario'] = "El codigo de usuario no se encuentra en la base de datos";
+    }
 
-        if (!isset($oUsuario)) {
-            $aErrores['CodUsuario'] = "El codigo de usuario no se encuentra en la base de datos";
-        }
-
-        //Comprueba si hay algún mensaje de error en algún campo
-        if ($aErrores['CodUsuario'] != null || $aErrores['Password'] != null) {
-            //Asigna el valor false a $entradaOK
-            $entradaOK = false;
-            unset($_REQUEST);
-        }
-//Si el usuario no le ha dado al botón de enviar
-    } else {
+    //Comprueba si hay algún mensaje de error en algún campo
+    if ($aErrores['CodUsuario'] != null || $aErrores['Password'] != null) {
         //Asigna el valor false a $entradaOK
         $entradaOK = false;
+        unset($_REQUEST);
     }
+//Si el usuario no le ha dado al botón de enviar
+} else {
+    //Asigna el valor false a $entradaOK
+    $entradaOK = false;
+}
 
 //Si la entrada es correcta, trata los valores recogidos por el formulario
-    if ($entradaOK) {
-        
-        //Guarda en la sesión el objeto usuario y redirige al index
-        $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;
-        $_SESSION['paginaEnCurso'] = $controladores['inicio'];
-        
-        header('Location: index.php');
-        
-        exit;
-    }
+if ($entradaOK) {
+
+    //Guarda en la sesión el objeto usuario y redirige al index
+    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;
+    $_SESSION['paginaEnCurso'] = $controladores['inicio'];
+
+    header('Location: index.php');
+
+    exit;
+}
 
 //Guarda en la variable vistaEnCurso la vista a implementar
-    $vista = $vistas['login'];
-    
+$vista = $vistas['login'];
+
 //Se incluye la vista que contiene la $vistaEnCurso    
-    require_once $vistas['layout'];
-}
+require_once $vistas['layout'];

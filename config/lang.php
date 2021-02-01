@@ -56,3 +56,4 @@ $aLang = [
         'cancel' => 'Cancel'
     ]
 ];
+?>

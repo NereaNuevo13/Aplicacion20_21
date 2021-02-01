@@ -4,6 +4,7 @@
  *   @since: 02/12/2020
  *   cInicio
  */
+
 if (!isset($_COOKIE['idioma'])) {
     setcookie('idioma', 'es', time() + 2592000); // crea la cookie 'idioma' con el valor 'es' para 30 dias
     header('Location: index.php');

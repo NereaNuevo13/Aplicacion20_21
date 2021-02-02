@@ -302,6 +302,18 @@ th{
     padding: 25px;
 }
 
+.articuloREST{
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 49%;
+    float: left;
+    padding: 10px;
+    font-size: 0.5em;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 17px;
+}
+
 .buttons-header-inicio{
     width: 90%;
 }

@@ -10,6 +10,18 @@
     src: url(../fonts/Roboto-Medium.ttf);
 }
 
+@import url("//db.onlinewebfonts.com/c/6d32b8e06f40fb7698cfb714b9e7975d?family=BillabongW00-Regular");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Sriracha&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@font-face {
+    font-family: 'Satisfy', cursive;
+    src: url(../fonts/Satisfy-Regular.ttf);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -82,7 +94,6 @@ footer {
 
 .required{
     background-color: white;
-    
 }
 
 form[name="login"],form[name="singup"],form[name="editarPerfil"]{
@@ -243,7 +254,7 @@ h1{
 
 .inicioSesion{
     background-color: black;
-    margin-left: 49%;
+    margin-left: 45%;
     color: white;
 }
 
@@ -324,4 +335,109 @@ th{
 
 .button{
     margin: 0px;
+}
+
+.vLogin{
+    width: 20%;
+    margin: 50px auto;
+}
+
+#formVLOGIN, .articuloEditar{
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 0px;
+}
+
+.titLogin{
+    font-family: 'Satisfy', cursive;
+    background-color: white;
+    color: black;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.editPerf{
+    font-family: 'Satisfy', cursive;
+    background-color: white;
+    color: black;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+}
+
+#inicioSesion{
+    border: 0px solid blue;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #B2DFFC;
+    color: white;
+    font-weight: bold;
+}
+
+#registroInicio{
+    border: 0px solid blue;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #99E780;
+    color: white;
+    font-weight: bold;
+}
+
+#aceptarSesion{
+    border: 0px solid blue;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #EA5656;
+    color: white;
+    font-weight: bold;
+}
+
+#botonAPI{
+    border: 0px solid blue;
+    width: 20%;
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #99E780;
+    color: white;
+    font-weight: bold;
+}
+
+#botonAPI2{
+    border: 0px solid blue;
+    width: 20%;
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #B2DFFC;
+    color: white;
+    font-weight: bold;
+}
+
+#bodyLog{
+    background-color: white;
+}
+
+#CodUsuario, #Password, #DescUsuario, #PasswordConfirmacion, #Perfil, #Conexiones, #Ultima{
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 100%;
+    text-align: center;
+}
+
+.descUsua{
+    background-color: #D4D4D4;
+}
+
+.noCuenta{
+    margin-top: 2px;
+    margin-bottom: 2px;
 }

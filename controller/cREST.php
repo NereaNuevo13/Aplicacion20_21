@@ -12,6 +12,12 @@ if (isset($_REQUEST['cerrarSesion'])) { // si se ha pulsado el boton de Cerrar S
     exit;
 }
 
+if (isset($_REQUEST['Cancelar'])) {
+    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+    header('Location: index.php');
+    exit;
+}
+
 if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
     $_SESSION['paginaEnCurso'] = $controladores['miCuenta']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
     

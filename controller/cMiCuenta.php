@@ -1,11 +1,10 @@
 <?php
 
-$usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
-$CodUser = $usuarioActual->getCodUsuario();
-$DescUser = $usuarioActual->getDescUsuario();
-$Profile = $usuarioActual->getPerfil();
-$ConexNumber = $usuarioActual->getNumConexiones();
-$LastDateConex = date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion());
+if (isset($_REQUEST['cerrarSesion'])) { // si se ha pulsado el boton de Cerrar Sesion
+    session_destroy(); // destruye todos los datos asociados a la sesion
+    header("Location: index.php"); // redirige al login
+    exit;
+}
 
 if (isset($_REQUEST['Cancelar'])) {
     $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
@@ -19,6 +18,13 @@ if (isset($_REQUEST['borrarCuenta'])) { // si se ha pulsado el boton de registra
     header('Location: index.php');
     exit;
 }
+
+$usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+$CodUser = $usuarioActual->getCodUsuario();
+$DescUser = $usuarioActual->getDescUsuario();
+$Profile = $usuarioActual->getPerfil();
+$ConexNumber = $usuarioActual->getNumConexiones();
+$LastDateConex = date('d/m/Y H:i:s');
 
 define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
 $entradaOK = true;

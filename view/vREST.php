@@ -8,9 +8,9 @@
             -->
             <?php echo ($usuarioActual->getImagenPerfil() != null) ? '<img id="fotoPerfil" src = "data:image/png;base64,' . base64_encode($usuarioActual->getImagenPerfil()) . '" alt="Foto de perfil"/>' : "<img id='fotoPerfil' src='webroot/media/imagen_perfil2.png' alt='imagen_perfil'/>"; ?>
             <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
                 <button class="logout" type="submit" name='editarPerfil'><?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button>
                 <button class="logout" type="submit" name='borrarCuenta'><?php echo $aLang[$_COOKIE['idioma']]['deleteAcc']; ?></button>
+                <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
             </form>
         </div>
 
@@ -32,7 +32,8 @@
                 </div>
                 <input type="number" placeholder="1-57" max="57" min="1" name="numero" />
                 <div>
-                    <button class="button" id="reg" type="submit" name="Aceptar2"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                    <button class="button" id="botonAPI" type="submit" name="Aceptar2"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                    <button class="button" id="botonAPI2" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
                 </div>
                 <a style="color:black; text-decoration: underline black;" href="https://www.breakingbadapi.com/documentation" target="_blank"><p>Api de referencia</p></a>
             </form>
@@ -49,7 +50,8 @@
                 <input id="fechaR" type="date" name="fecha" value="<?php echo date('Y-m-d') ?>"/>
 
                 <div>
-                    <button class="button" id="reg" type="submit" name="Aceptar1"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                    <button class="button" id="botonAPI" type="submit" name="Aceptar1"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                    <button class="button" id="botonAPI2" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
                 </div>
             </form>  
         </article>
@@ -63,7 +65,8 @@
                 <label for="CodUsuario"><?php echo "Cancion"; ?></label>
                 <input type="text" placeholder="EJ: Torero" name="tituloSong"/>
                 <br><br>
-                <button class="button" id="reg" type="submit" name="Aceptar3"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                <button class="button" id="botonAPI" type="submit" name="Aceptar3"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>
+                <button class="button" id="botonAPI2" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
             </form>
             <a style="color:black; text-decoration: underline black;" href="https://lyricsovh.docs.apiary.io/#" target="_blank">Api de Referencia</a>
             <pre><?php echo $letraEnCurso ?></pre>

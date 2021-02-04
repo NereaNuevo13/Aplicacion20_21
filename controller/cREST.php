@@ -62,7 +62,7 @@ if (isset($_REQUEST['Aceptar2'])) { //si se ha enviado una fecha
     //llamamos al servicio y le pasamos la fecha introducida por el usuario
     $ValoresActor = REST::actorBB($_REQUEST['numero']);
 } else {
-    $ValoresActor = null;
+    $ValoresActor = REST::actorBB(1);
 }
 if (is_null($ValoresActor)) {
     $nombrePersonaje = null;
@@ -89,7 +89,7 @@ if (isset($_REQUEST['Aceptar3'])) { //si se ha enviado una fecha
     //llamamos al servicio y le pasamos la fecha introducida por el usuario
     $ValoresArtista = REST::songLyrics($_REQUEST['nombreArt'],$_REQUEST['tituloSong']);
 } else {
-    $ValoresArtista = null;
+    $ValoresArtista = REST::songLyrics('Chayanne', 'Torero');
 }
 
 if (is_null($ValoresArtista)) {

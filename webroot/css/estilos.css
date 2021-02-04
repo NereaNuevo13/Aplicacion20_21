@@ -316,13 +316,13 @@ th{
 .articuloREST{
     border: 2px solid black;
     border-radius: 15px;
-    width: 49%;
+    width: 47%;
     float: left;
     padding: 10px;
     font-size: 0.5em;
     margin-bottom: 20px;
     display: inline-block;
-    margin-right: 17px;
+    margin-right: 50px;
 }
 
 .buttons-header-inicio{
@@ -440,4 +440,15 @@ th{
 .noCuenta{
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+.apiNASA{
+    float: right;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 47%;
+    padding: 10px;
+    font-size: 0.5em;
+    margin-bottom: 20px;
+    display: inline-block;
 }

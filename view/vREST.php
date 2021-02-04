@@ -1,6 +1,6 @@
 <html>
     <header>
-        <h1 class="inicioSesion">API REST</h1>
+        <h1 class="inicioSesion">APP LOG IN / LOG OUT</h1>
         <div class="buttons-header-inicio">
             <!--
             <a href="detalle.php"><button class="button-inicio" name="Detalle"> <?php echo $aLang[$_COOKIE['idioma']]['details']; ?></button></a>
@@ -39,9 +39,9 @@
             </form>
         </article>
 
-        <article class="articuloREST" class="apiNASA">
+        <article class="apiNASA">
             <h3>API NASA</h3>
-            <form class="rest"  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form class="rest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div id="respuestarest">
                     <p id="titulorest"><?php echo $tituloEnCurso ?></p>
                     <img width="30%" src="<?php echo $imagenEnCurso ?>">
@@ -56,7 +56,7 @@
             </form>  
         </article>
 
-        <article class="articuloREST" class="apiNASA">
+        <article class="apiNASA">
             <h3>API LYRICS</h3>
             <form class="rest"  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <label for="CodUsuario"><?php echo "Artista" ?></label>
@@ -69,6 +69,7 @@
                 <button class="button" id="botonAPI2" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
             </form>
             <a style="color:black; text-decoration: underline black;" href="https://lyricsovh.docs.apiary.io/#" target="_blank">Api de Referencia</a>
+            <p><?php echo $_REQUEST['nombreArt'] . " - " . $_REQUEST['tituloSong']; ?></p>
             <pre><?php echo $letraEnCurso ?></pre>
         </article>
     </main>

@@ -59,4 +59,3 @@ if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y h
 $vista = $vistas['registro']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
 
 require_once $vistas['layout'];
-?> 

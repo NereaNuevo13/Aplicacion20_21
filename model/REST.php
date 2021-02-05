@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -18,6 +17,16 @@ class REST {
     public static function sevicioAPOD($fecha) {
         error_reporting(0);
         return json_decode(file_get_contents("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=$fecha"), true);
+        //llamamos al servicio, pasándole la fecha al campo date, y decodificamos el json que nos devuelve
+    }
+    
+    public static function actorBB($number) {
+        return json_decode(file_get_contents("https://www.breakingbadapi.com/api/characters/$number"), true);        
+    }
+
+    public static function songLyrics($artista, $titulo) {
+        error_reporting(0);
+        return json_decode(file_get_contents("https://api.lyrics.ovh/v1/$artista/$titulo"), true);
         //llamamos al servicio, pasándole la fecha al campo date, y decodificamos el json que nos devuelve
     }
 }

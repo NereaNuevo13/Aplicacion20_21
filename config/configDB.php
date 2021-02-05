@@ -7,8 +7,8 @@ define("PASSWORD", "paso");
 
 //1 AND 1
 /*
-  define ("HOST", "mysql:host=db5001094498.hosting-data.io;dbname=dbs939516");
-  define ("USUARIO", "dbu1114024");
-  define ("PASS", "Covid1234$");
+  define ("DNS", "mysql:host=db5001094498.hosting-data.io;dbname=dbs939516;charset=utf8");
+  define ("USER", "dbu1114024");
+  define ("PASSWORD", "Covid1234$");
  */
 ?>

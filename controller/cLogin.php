@@ -1,7 +1,7 @@
 <?php
 
 /**
- *   @author: Javier Nieto Lorenzo
+ *   @author: Nerea Nuevo Pascual
  *   @since: 02/12/2020
  *   cInicio
  */
@@ -22,41 +22,57 @@ if (isset($_REQUEST['Registrarse'])) { // si se ha pulsado el boton de registrar
 
     header('Location: index.php');
     exit;
-}
-
-define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
-
-$entradaOK = true;
-
-$aErrores = [//declaro e inicializo el array de errores
-    'CodUsuario' => null,
-    'Password' => null
-];
+} else {
 
 
-if (isset($_REQUEST["IniciarSesion"])) { // comprueba que el usuario le ha dado a al boton de IniciarSesion y valida la entrada de todos los campos
-    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO); // comprueba que la entrada del codigo de usuario es correcta
-    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO); // comprueba que la entrada del password es correcta
+    define("OBLIGATORIO", 1);
 
-    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
+    $entradaOK = true;
 
-    foreach ($aErrores as $campo => $error) { //Recorre el array en busca de mensajes de error
-        if ($error != null) { //Si lo encuentra vacia el campo y cambia la condiccion
-            $entradaOK = false; //Cambia la condiccion de la variable
+//Array de errores
+    $aErrores = [
+        'CodUsuario' => null,
+        'Password' => null
+    ];
+
+//Comprueba que el usuario le ha dado al boton de IniciarSesion y valida la entrada de todos los campos
+    if (isset($_REQUEST["IniciarSesion"])) {
+        $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);
+        $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
+
+        $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
+
+        if (!isset($oUsuario)) {
+            $aErrores['CodUsuario'] = "El codigo de usuario no se encuentra en la base de datos";
         }
+
+        //Comprueba si hay algún mensaje de error en algún campo
+        if ($aErrores['CodUsuario'] != null || $aErrores['Password'] != null) {
+            //Asigna el valor false a $entradaOK
+            $entradaOK = false;
+            unset($_REQUEST);
+        }
+//Si el usuario no le ha dado al botón de enviar
+    } else {
+        //Asigna el valor false a $entradaOK
+        $entradaOK = false;
     }
-} else { // si el usuario no le ha dado al boton de enviar
-    $entradaOK = false; // le doy el valor false a $entradaOK
+
+//Si la entrada es correcta, trata los valores recogidos por el formulario
+    if ($entradaOK) {
+
+        //Guarda en la sesión el objeto usuario y redirige al index
+        $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;
+        $_SESSION['paginaEnCurso'] = $controladores['inicio'];
+
+        header('Location: index.php');
+
+        exit;
+    }
+
+//Guarda en la variable vistaEnCurso la vista a implementar
+    $vista = $vistas['login'];
 }
 
-if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
-    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario; // guarda en la session el objeto usuario
-    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
-
-    header('Location: index.php'); // redirige al index.php
-    exit;
-}
-
-$vista = $vistas['login'];
+//Se incluye la vista que contiene la $vistaEnCurso    
 require_once $vistas['layout'];
-?> 

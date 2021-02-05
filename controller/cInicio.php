@@ -45,5 +45,3 @@ $imagenUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getImagenPerfi
 
 $vista = $vistas['inicio'];
 require_once $vistas['layout'];
-
-?>

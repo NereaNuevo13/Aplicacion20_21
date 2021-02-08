@@ -1,6 +1,6 @@
 <?php
 /**
- *   @author: Javier Nieto Lorenzo
+ *   @author: Nerea Nuevo
  *   @since: 02/12/2020
  *   Programa
 */

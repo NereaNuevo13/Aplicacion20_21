@@ -24,7 +24,6 @@ if (isset($_REQUEST['Registrarse'])) { // si se ha pulsado el boton de registrar
     exit;
 } else {
 
-
     define("OBLIGATORIO", 1);
 
     $entradaOK = true;

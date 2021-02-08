@@ -7,7 +7,6 @@ if(isset($_REQUEST['Cancelar'])){
     exit;
 }
 
-
 define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
 
 $entradaOK = true;

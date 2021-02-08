@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Susana Fabián Antón
+ * @author Nerea Nuevo
  * @since 26/01/2021
  * @version 26/01/2021
  */

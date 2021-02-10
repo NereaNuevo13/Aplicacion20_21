@@ -43,5 +43,11 @@ $descUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getDescUsuario()
 $ultimaConexion = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getFechaHoraUltimaConexion();
 $imagenUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getImagenPerfil();
 
+if($numConexiones > 1){
+    $ultimaConexion = date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion());
+}else{
+    $ultimaConexion = null;
+}
+
 $vista = $vistas['inicio'];
 require_once $vistas['layout'];

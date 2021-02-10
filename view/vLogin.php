@@ -7,6 +7,16 @@
         <header>
             <h1 class="inicioSesion">APP LOG IN / LOG OUT</h1>
         </header>
+        <div class="divDoc2" >
+            <a href="doc/201129CatalogoDeRequisitos.pdf" target="_blank"><p class="divDoc">Catálogo de Requisitos</p></a>
+            <a href="doc/210102DiagramaDeCasosDeUso.pdf" target="_blank"><p class="divDoc">Diagrama de Casos de Uso</p></a>
+            <a href="doc/210102DiagramaDeClases.pdf" target="_blank"><p class="divDoc">Diagrama de Clases</p></a>
+            <a href="doc/210102ArbolDeNavegación.pdf" target="_blank"><p class="divDoc">Árbol de Navegación</p></a>
+            <a href="doc/210102RelacionDeFicheros.pdf" target="_blank"><p class="divDoc">Mapa Web de Relación de Ficheros</p></a>
+            <a href="doc/200113EstructuraDeAlmacenamiento.JPG" target="_blank"><p class="divDoc">Estructura de Almacenamiento</p></a>
+            <a href="doc/201127ModeloFisicoDeDatos20-21.pdf" target="_blank"><p class="divDoc">Modelo Fisico de Datos</p></a>
+        </div>
+
         <main class="vLogin">
             <form name="formularioIdioma" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <button <?php echo ($_COOKIE['idioma'] == "es") ? "style='color: black;'" : null; ?> class="idioma " type="submit" name="idiomaElegido" value="es"> Castellano</button>
@@ -25,6 +35,12 @@
                     echo (isset($_REQUEST['Password'])) ? $_REQUEST['Password'] : null;
                     ?>" placeholder="<?php echo $aLang[$_COOKIE['idioma']]['password']; ?>">
                 </div>
+                <table>
+                    <tr>
+                        <td><input style="margin-left: -20px" type="checkbox" onclick="validarCheck()" id="checkBox" value="checkbox"></td>
+                        <td><span style="margin-left: -110px"><?php echo $aLang[$_COOKIE['idioma']]['showPass']; ?></span></td>
+                    </tr>
+                </table>
 
                 <button class="button" id="inicioSesion" type="submit" name="IniciarSesion"><?php echo $aLang[$_COOKIE['idioma']]['login']; ?></button>
                 <p>──────── <span>O</span> ────────</p>

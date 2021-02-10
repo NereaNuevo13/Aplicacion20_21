@@ -13,7 +13,6 @@
                 <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
             </form>
         </div>
-
     </header>
     <body  id="bodyLog">
         <main class="main-container-inicio" class="flex-container-align-item-center">

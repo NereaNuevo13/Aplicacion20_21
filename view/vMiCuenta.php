@@ -8,6 +8,7 @@
             -->
             <?php echo ($usuarioActual->getImagenPerfil() != null) ? '<img id="fotoPerfil" src = "data:image/png;base64,' . base64_encode($usuarioActual->getImagenPerfil()) . '" alt="Foto de perfil"/>' : "<img id='fotoPerfil' src='webroot/media/imagen_perfil2.png' alt='imagen_perfil'/>"; ?>
             <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <button class="logout" type="submit" name='inicioApp'><?php echo $aLang[$_COOKIE['idioma']]['home']; ?></button>
                 <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
             </form>
         </div>

@@ -25,6 +25,8 @@ $aLang = [
         'deleteAcc' => 'Borrar Cuenta',
         'confirmPassword' => 'Confirmar Contraseña',
         'rest' => 'REST',
+        'home' => 'Inicio',
+        'showPass' => 'Mostrar Contraseña',
         
         'accept' => 'Aceptar',
         'cancel' => 'Cancelar'
@@ -51,6 +53,8 @@ $aLang = [
         'deleteAcc' => 'Delete Account',
         'confirmPassword' => 'Confirm Password',
         'rest' => 'REST',
+        'home' => 'Home',
+        'showPass' => 'Show Password',
         
         'accept' => 'Accept',
         'cancel' => 'Cancel'

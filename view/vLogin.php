@@ -16,7 +16,6 @@
             <a href="doc/200113EstructuraDeAlmacenamiento.JPG" target="_blank"><p class="divDoc">Estructura de Almacenamiento</p></a>
             <a href="doc/201127ModeloFisicoDeDatos20-21.pdf" target="_blank"><p class="divDoc">Modelo Fisico de Datos</p></a>
         </div>
-
         <main class="vLogin">
             <form name="formularioIdioma" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <button <?php echo ($_COOKIE['idioma'] == "es") ? "style='color: black;'" : null; ?> class="idioma " type="submit" name="idiomaElegido" value="es"> Castellano</button>
@@ -35,18 +34,17 @@
                     echo (isset($_REQUEST['Password'])) ? $_REQUEST['Password'] : null;
                     ?>" placeholder="<?php echo $aLang[$_COOKIE['idioma']]['password']; ?>">
                 </div>
-                <table>
+                <table class="tablaLogin">
                     <tr>
                         <td><input style="margin-left: -20px" type="checkbox" onclick="validarCheck()" id="checkBox" value="checkbox"></td>
-                        <td><span style="margin-left: -110px"><?php echo $aLang[$_COOKIE['idioma']]['showPass']; ?></span></td>
+                        <td><span style="margin-left: -80px"><?php echo $aLang[$_COOKIE['idioma']]['showPass']; ?></span></td>
                     </tr>
                 </table>
 
                 <button class="button" id="inicioSesion" type="submit" name="IniciarSesion"><?php echo $aLang[$_COOKIE['idioma']]['login']; ?></button>
-                <p>──────── <span>O</span> ────────</p>
+                <p class="dividirLogin"></p>
                 <p class="noCuenta">¿No tienes cuenta?</p>
                 <button class="button" id="registroInicio" type="submit" name="Registrarse"><?php echo $aLang[$_COOKIE['idioma']]['signup']; ?></button>
-
             </form>
         </main>
     </body>

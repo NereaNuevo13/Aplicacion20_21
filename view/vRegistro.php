@@ -42,16 +42,16 @@
                 <?php
                 echo ($aErrores['PasswordConfirmacion'] != null) ? "<span style='color:#FF0000'>" . $aErrores['PasswordConfirmacion'] . "</span>" : null; // si el campo es erroneo se muestra un mensaje de error
                 ?>
-                <table>
+                <table class="tablaLogin">
                     <tr>
                         <td><input style="margin-left: -20px" type="checkbox" onclick="validarCheck2()" id="checkBox" value="checkbox"></td>
-                        <td><span style="margin-left: -110px"><?php echo $aLang[$_COOKIE['idioma']]['showPass']; ?></span></td>
+                        <td><span style="margin-left: -80px"><?php echo $aLang[$_COOKIE['idioma']]['showPass']; ?></span></td>
                     </tr>
                 </table>
 
                 <button class="button" id="registroInicio" type="submit" name="Registrarse"><?php echo $aLang[$_COOKIE['idioma']]['signup']; ?></button>
                 <button class="button"  id="inicioSesion" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
-
             </form>
+        </main>
     </body>
 </html>

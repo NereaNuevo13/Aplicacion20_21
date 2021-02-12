@@ -465,6 +465,21 @@ td{
     display: inline-block;
 }
 
-span{
-    
+.dividirLogin{
+    border-top: 2px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.tablaLogin{
+    width: 100%;
+}
+
+tr{
+    width: 100%;
+}
+
+td{
+    width: 50%;
 }

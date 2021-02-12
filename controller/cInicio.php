@@ -1,6 +1,6 @@
 <?php
 /**
- *   @author: Javier Nieto Lorenzo
+ *   @author: Nerea Nuevo
  *   @since: 02/12/2020
  *   Programa
 */
@@ -42,6 +42,12 @@ $numConexiones = $oUsuarioControlador->getNumConexiones(); // variable que tiene
 $descUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
 $ultimaConexion = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getFechaHoraUltimaConexion();
 $imagenUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getImagenPerfil();
+
+if($numConexiones > 1){
+    $ultimaConexion = date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion());
+}else{
+    $ultimaConexion = null;
+}
 
 $vista = $vistas['inicio'];
 require_once $vistas['layout'];

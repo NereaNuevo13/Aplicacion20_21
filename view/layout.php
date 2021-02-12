@@ -8,6 +8,7 @@
             <meta name="robots"     content="index, follow">      
             <link rel="stylesheet"  href="webroot/css/estilos.css"       type="text/css" >
             <link rel="icon"        href="webroot/media/favicon.png"    type="image/x-icon">
+            <script src="webroot/javascript/script.js"   type="text/javascript"></script>
         </head>
         <body>
 

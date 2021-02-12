@@ -46,7 +46,7 @@
                     <br>
 
                     <button class="button" id="aceptarSesion" type="submit" name="Aceptar"><?php echo $aLang[$_COOKIE['idioma']]['accept']; ?></button>    
-                    <button class="button" id="inicioSesion" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button> 
+                    <button class="button" id="inicioSesion" type="submit" name="Cancelar"><?php echo $aLang[$_COOKIE['idioma']]['cancel']; ?></button>
                 </form>
             </article>
         </main>

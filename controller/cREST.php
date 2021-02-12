@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Susana Fabián Antón
+ * @author Nerea Nuevo
  * @since 26/01/2021
  * @version 26/01/2021
  */
@@ -18,26 +18,14 @@ if (isset($_REQUEST['Cancelar'])) {
     exit;
 }
 
-if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
-    $_SESSION['paginaEnCurso'] = $controladores['miCuenta']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
-    
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['borrarCuenta'])) { // si se ha pulsado el boton de registrarse
-    $_SESSION['paginaEnCurso'] = $controladores['deleteAccount']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+if (isset($_REQUEST['inicioApp'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
     
     header('Location: index.php');
     exit;
 }
 
 $titulo = "REST";
-if (isset($_REQUEST['Volver'])) { // si se ha pulsado el botón de editar perfil
-    $_SESSION['paginaEnCurso'] = $controladores['inicio']; //guardamos en la sesión el controlador que debe ejecutarse
-    header('Location: index.php'); //enviamos al usuario de vuelta al index
-    exit;
-}
 
 if (isset($_REQUEST['Aceptar1'])) { //si se ha enviado una fecha
     //llamamos al servicio y le pasamos la fecha introducida por el usuario

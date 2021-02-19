@@ -10,7 +10,7 @@
         <div class="divDoc2" >
             <a href="doc/201129CatalogoDeRequisitos.pdf" target="_blank"><p class="divDoc">Catálogo de Requisitos</p></a>
             <a href="doc/210102DiagramaDeCasosDeUso.pdf" target="_blank"><p class="divDoc">Diagrama de Casos de Uso</p></a>
-            <a href="doc/210102DiagramaDeClases.pdf" target="_blank"><p class="divDoc">Diagrama de Clases</p></a>
+            <a href="doc/DiagramaDeClases.pdf" target="_blank"><p class="divDoc">Diagrama de Clases</p></a>
             <a href="doc/210102ArbolDeNavegación.pdf" target="_blank"><p class="divDoc">Árbol de Navegación</p></a>
             <a href="doc/210102RelacionDeFicheros.pdf" target="_blank"><p class="divDoc">Mapa Web de Relación de Ficheros</p></a>
             <a href="doc/200113EstructuraDeAlmacenamiento.JPG" target="_blank"><p class="divDoc">Estructura de Almacenamiento</p></a>

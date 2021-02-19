@@ -56,7 +56,7 @@
         </article>
 
         <article class="apiNASA">
-            <h3>API LYRICS</h3>
+            <h3>API LETRAS DE CANCIONES</h3>
             <form class="rest"  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <label for="CodUsuario"><?php echo "Artista" ?></label>
                 <input type="text" placeholder="EJ: Chayanne" name="nombreArt"/>

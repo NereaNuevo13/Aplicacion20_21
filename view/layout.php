@@ -18,6 +18,7 @@
             <a href="http://daw214.ieslossauces.es/" target="_blank"> <img src="webroot/media/oneandone.png" alt="oneandone icon" width="40"></a>
             <a href="../../index.html">&copy; 2020-2021 Nerea Nuevo Pascual</a>
             <a href="https://github.com/NereaNuevo13" target="_blank"><img class="github" width="40" src="webroot/media/github_1.png" ></a>
+            <a href="doc/CVNereaNuevoPascual.pdf" target="_blank"><img class="github" width="40" src="webroot/media/cv.png" ></a>
         </footer>
     </body>
 </html>

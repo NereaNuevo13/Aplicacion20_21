@@ -8,13 +8,12 @@
             <h1 class="inicioSesion">APP LOG IN / LOG OUT</h1>
         </header>
         <div class="divDoc2" >
-            <a href="doc/201129CatalogoDeRequisitos.pdf" target="_blank"><p class="divDoc">Catálogo de Requisitos</p></a>
-            <a href="doc/210102DiagramaDeCasosDeUso.pdf" target="_blank"><p class="divDoc">Diagrama de Casos de Uso</p></a>
-            <a href="doc/DiagramaDeClases.pdf" target="_blank"><p class="divDoc">Diagrama de Clases</p></a>
-            <a href="doc/210102ArbolDeNavegación.pdf" target="_blank"><p class="divDoc">Árbol de Navegación</p></a>
-            <a href="doc/210102RelacionDeFicheros.pdf" target="_blank"><p class="divDoc">Mapa Web de Relación de Ficheros</p></a>
-            <a href="doc/200113EstructuraDeAlmacenamiento.JPG" target="_blank"><p class="divDoc">Estructura de Almacenamiento</p></a>
-            <a href="doc/201127ModeloFisicoDeDatos20-21.pdf" target="_blank"><p class="divDoc">Modelo Fisico de Datos</p></a>
+            <a href="doc/201129CatalogoDeRequisitos.pdf" target="_blank"><img src="webroot/media/num1.png" class="divDoc" width="200" height="200"></a>
+            <a href="doc/210102DiagramaDeCasosDeUso.pdf" target="_blank"><img src="webroot/media/num2.png" class="divDoc" width="200" height="200"></a><br>
+            <a href="doc/DiagramaDeClases.pdf" target="_blank"><img src="webroot/media/DiagramaClases1.png" class="divDoc" width="200" height="200"></a>
+            <a href="doc/210102ArbolDeNavegación.pdf" target="_blank"><img src="webroot/media/num3.png" class="divDoc" width="200" height="200"></a><br>
+            <a href="doc/210102RelacionDeFicheros.pdf" target="_blank"><img src="webroot/media/num4.png" class="divDoc" width="200" height="200"></a>
+            <a href="doc/201127ModeloFisicoDeDatos20-21.pdf" target="_blank"><img src="webroot/media/num6.png" class="divDoc" width="200" height="200"></a>
         </div>
         <main class="vLogin">
             <form name="formularioIdioma" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
